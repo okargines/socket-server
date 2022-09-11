@@ -1,0 +1,93 @@
+En el terminal de comandos digitar los siguientes puntos:
+
+1. npm init
+    Luego digitar socket-server
+    y Enter a TODO.
+    Ejemplo:
+        package name: (01-server) socket-server  
+        version: (1.0.0)
+        description:
+        entry point: (index.js)
+        test command:
+        git repository:
+        keywords:
+        author:
+        license: (ISC)
+        About to write to C:\Users\devalenet\Desktop\basura\APPEJEWEB\sockets\01-server\package.json:
+
+        {
+        "name": "socket-server",
+        "version": "1.0.0",
+        "description": "",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "author": "",
+        "license": "ISC"
+        }
+2. npm Install express
+    En caso necesiten na  version especifica se coloaca...
+    npm install express@4.16.4
+3. npm install cors
+    En caso el servidor de socket este en otro servidor diferente al frontend
+
+4. npm install body-parser
+5. tsc --init
+    a) Luego en archivo tsconfig.json modificar la etiqueta "target"
+    de "es5" a "es6"
+    b) Ademas Descomentar la etiqueta "types":[] y agregar en el corchete node 
+    ejemplo=> "types": [node]
+    c) Tambien Descomentar la etiqueta "outDir":"./" para guardar la compilacion del typescript.
+    ahora debe quedar asi=>  "outDir":"dist/"
+6. Crear en la raiz el archivo => index.ts
+7. tsc -w
+    Para entrar al modo observador modo wacth por cada cambio al guardar.
+    Ejemplo de ejecucion:
+        [20:10:18] Starting compilation in watch mode...
+        error TS2688: Cannot find type definition file for 'node'.
+        [20:10:23] Found 1 error. Watching for file changes.
+        ++++ Por este errror se debe modifca el archivo package.json
+        ++++ extonar el punto 5(b). debe quedar asi: "types":[]
+        Despues del Extorno la ejecucion del comando tsc -w terminara en automatico..
+        puede visualizarlo en la terminal de comando con cero errores..
+    Ejemplo:
+        [20:14:10] File change detected. Starting incremental compilation..
+        [20:14:16] Found 0 errors. Watching for file changes.
+8. Para correr el modulo de Node esdecir para ejecutar el index.ts
+    Abrir una terminal nueva
+    ejecutar => nodemon dist/  ..Enter
+    Ejemplo: de resultado
+        [nodemon] 2.0.15
+        [nodemon] to restart at any time, enter `rs`
+        [nodemon] watching path(s): *.*
+        [nodemon] watching extensions: js,mjs,json
+        [nodemon] starting `node dist/`
+        Mi nombre es fernando
+        [nodemon] clean exit - waiting for changes before restart
+    Luego ingresar al Index.ts y modificar la constante nombre con otro valor=> nombre="Alberto".
+    y Guardar  cambios..
+        Ejemplo: de resultado
+        [nodemon] starting `node dist/`
+        Mi nombre es fernando
+        [nodemon] clean exit - waiting for changes before restart
+        [nodemon] restarting due to changes...
+        [nodemon] starting `node dist/`
+        Mi nombre es Alberto
+        [nodemon] clean exit - waiting for changes before restart
+
+        Explicacion: En automatico se compila el codigo typescript y como esta en modo Observable  con el nodemon ..
+        envia el resultado modificado...
+
+9. npm i --save-dev @types/express
+    Para  utilizar las ayudas de los parquetes de express 
+    se coloco --save-dev porque estas definiciones no son parte del proyecto final
+    se entiende que es una dependencia de desarrollo.
+    Ejemplo: de resultado en el => package.json
+      "devDependencies": {
+            "@types/express": "^4.17.13"
+        }
+
+10. 9. npm i --save-dev @types/cors
+    Para  utilizar las ayudas del parquete CORS. 
+
