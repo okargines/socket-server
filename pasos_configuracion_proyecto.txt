@@ -88,6 +88,28 @@ En el terminal de comandos digitar los siguientes puntos:
             "@types/express": "^4.17.13"
         }
 
-10. 9. npm i --save-dev @types/cors
+10. npm i --save-dev @types/cors
     Para  utilizar las ayudas del parquete CORS. 
 
+11. git init
+	para inicializar el repositorio y lo deja listo para dar seguimiento
+	a cada uno de los archivos
+	
+	git status
+	
+	git add .
+	
+	git commit -m "creando repositorio remoto - 1er commit - Rest server"
+	
+	git remote add origin https://github.com/okargines/socket-server.git
+	
+	git push -u origin master
+	
+	credenciales de github
+	
+	
+12. git tag
+	git tag -a 1.0.0 -m "REST Server listo"
+	git tag
+	git push --tags
+	
