@@ -5,20 +5,21 @@ const router = Router();
 
 
 router.get ('/mensajes', (req: Request, res:Response)=>{
+    //***/
     //Cuando se envia Parametros
-    // const cuerpo = req.query.cuerpo;
-    // res.json({
-    //     ok:true,
-    //     mensaje: 'Todo esta bien!!',
-    //     cuerpo
-    // });
-
-    //Cuando no se envia parameytros
     const cuerpo = req.query.cuerpo;
     res.json({
         ok:true,
-        mensaje: 'Todo esta bien!!'
+        mensaje: 'Todo esta bien!!',
+        cuerpo
     });
+    
+    /***/
+    //Cuando no se envia parameytros
+    // res.json({
+    //     ok:true,
+    //     mensaje: 'Todo esta bien!!'
+    // });
 
 });
 

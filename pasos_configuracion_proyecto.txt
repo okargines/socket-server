@@ -26,20 +26,27 @@ En el terminal de comandos digitar los siguientes puntos:
         "author": "",
         "license": "ISC"
         }
-2. npm Install express
+2. npm Install express    (npm Install express@4.16.4)
     En caso necesiten na  version especifica se coloaca...
     npm install express@4.16.4
+
 3. npm install cors
     En caso el servidor de socket este en otro servidor diferente al frontend
 
 4. npm install body-parser
-5. tsc --init
+    Hasta Aqui se puede continuar con el proyecto.
+
+5. tsc --init  (este comando crear el archivo: tsconfig.json)
+
     a) Luego en archivo tsconfig.json modificar la etiqueta "target"
     de "es5" a "es6"
-    b) Ademas Descomentar la etiqueta "types":[] y agregar en el corchete node 
+    b) Ademas Descomentar la etiqueta "types":[] y agregar en el corchete -> node 
     ejemplo=> "types": [node]
     c) Tambien Descomentar la etiqueta "outDir":"./" para guardar la compilacion del typescript.
     ahora debe quedar asi=>  "outDir":"dist/"
+        En esta carpeta se compila todo el codigo typescrip en javascript.
+
+
 6. Crear en la raiz el archivo => index.ts
 7. tsc -w
     Para entrar al modo observador modo wacth por cada cambio al guardar.

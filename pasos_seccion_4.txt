@@ -1,0 +1,44 @@
+
+SECCION 4
+
+1. Documentacion de https://socket.io/get-started/chat/
+
+    npm install socket.io
+
+
+2.  importar en la clase server.ts
+
+    import socketIO from 'socket.io'    
+
+    
+
+3. npm install @types/socket.io --save-dev
+
+    Se instalo porque el typescript no recopnocia las funciones de la libreira sOCKET.io
+
+
+
+4. importar la clase http
+
+    import htpp from 'http';
+    Luego se declara una varibale privada
+    en la clase Server{}
+
+    Explicacion:
+    en el CONSTRUCTOR se necesita recibir la configuracion del servidor que esta corriendo en este momento (en teroria seria -> app.express) pero SOCKET y EXPRESS compatible directamente entonces hay q usar un intermediario que va hacer el HTTP. 
+    Aterrizando un poco la libreria EXPRESS lo que hace es levantar un servidor HTTP por ello que HTTP es compatible con EXPRESS.  
+    
+    en teoria se va a levantar el servidor de la variable (httpServer) y no la variable del servidor (app.express)
+
+
+5.  Ahora continuando con la configuracion de nuestro 
+    sevidor SOCKET, en el CONSTRUCTOR se declara la variable  publica io
+
+
+6.  Asociar HTTP con IO 
+
+
+7.  Crear el  Proyecto FRONT-END
+
+    En la carpeta SOCKET crear un otro proyecto para el cliente FRONT-END
+    se llmara [02-basico]

@@ -1,16 +1,19 @@
-// const nombre= 'Alberto';
-// console.log(`Mi nombre es ${nombre}`);
+ const nombre= 'Alberto';
+ console.log(`Mi nombre es ${nombre}`);
 
 
 import Server from './classes/server';
 import router from './router/router';
+//esta sin corchetes porque la clase router esta tipado como export DEFAULT.
+
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
 //import { SERVER_PORT } from './global/environment';
 
-
-const server = new Server();
+ 
+//const server = new Server();
+const server = Server.instance;  //aplicando SINGLETON
 
 //BodyParser
 server.app.use(bodyParser.urlencoded({extended:true}));
