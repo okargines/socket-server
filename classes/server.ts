@@ -60,10 +60,19 @@ export default class Server{
         console.log('Escuchando conexiones sockets - BE');
 
         this.io.on('connection', cliente => {
-            console.log('Nuevo Cliente conectado - BE');
 
+            //console.log(cliente.id);
+            socket.conectarCliente(cliente);
+
+            /*
+            Configurar usuario
+            */
+            socket.configurarUsuario(cliente, this.io);    
+
+            
             /**
-             *Ahora le decimps a escucharsockets tambien debe estar pendiente del mensaje
+            * Ahora le decimps a escucharsockets tambien debe 
+            * estar  pendiente del mensaje
             **/
             socket.mensaje(cliente, this.io);   
 
@@ -77,6 +86,7 @@ export default class Server{
 
             //02 forma - Refactorizando Logica - usando un achivo q agrupa la logica del socket.
             socket.desconectar(cliente);
+
 
         });
 
