@@ -1,0 +1,3 @@
+Seccion 6
+
+1. Crear en el router.ts un metodo para obtener los IDs de los usaurios conectadops

@@ -1,7 +1,7 @@
 import { Usuario } from "./usuario";
 
 
-
+   
 export class UsuariosLista{
    
     private lista:Usuario[] = [];
@@ -34,7 +34,7 @@ export class UsuariosLista{
 
     //Obtener lista de usaurio    
     public getLista(){
-        return this.lista;
+        return this.lista.filter(usuario=> usuario.nombre !== 'sin-nombre');
     }
 
     //Obtener un Usuario

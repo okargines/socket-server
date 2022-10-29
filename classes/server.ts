@@ -62,14 +62,18 @@ export default class Server{
         this.io.on('connection', cliente => {
 
             //console.log(cliente.id);
-            socket.conectarCliente(cliente);
+            socket.conectarCliente(cliente, this.io);
 
             /*
             Configurar usuario
             */
             socket.configurarUsuario(cliente, this.io);    
 
-            
+            /*
+            Obtener usuarioa activos
+            */
+            socket.obtenerUsuarios(cliente, this.io);   
+
             /**
             * Ahora le decimps a escucharsockets tambien debe 
             * estar  pendiente del mensaje
@@ -85,7 +89,7 @@ export default class Server{
             // })
 
             //02 forma - Refactorizando Logica - usando un achivo q agrupa la logica del socket.
-            socket.desconectar(cliente);
+            socket.desconectar(cliente, this.io);
 
 
         });
